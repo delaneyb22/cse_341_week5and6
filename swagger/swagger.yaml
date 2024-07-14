@@ -1,0 +1,19 @@
+swagger: "2.0"
+info:
+  title: API Documentation
+  description: API for managing two collections
+  version: 1.0.0
+host: cse341-code-student.onrender.com
+basePath: /api/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /collection1:
+    get:
+      summary: Get all collection1 items
+      responses:
+       

@@ -1,0 +1,173 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "API Documentation",
+      "description": "API for managing two collections",
+      "version": "1.0.0"
+    },
+    "host": "cse341-code-student.onrender.com",
+    "basePath": "/api/v1",
+    "schemes": ["https"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+      "/collection1": {
+        "get": {
+          "summary": "Get all collection1 items",
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "array",
+                "items": {"$ref": "#/definitions/Collection1"}
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new collection1 item",
+          "consumes": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "collection1",
+              "description": "Collection1 item to create",
+              "schema": {"$ref": "#/definitions/Collection1"}
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {"$ref": "#/definitions/Collection1"}
+            }
+          }
+        },
+        "put": {
+          "summary": "Update a collection1 item",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "collection1",
+              "description": "Collection1 item to update",
+              "schema": {"$ref": "#/definitions/Collection1"}
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Updated",
+              "schema": {"$ref": "#/definitions/Collection1"}
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete a collection1 item",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Deleted"
+            }
+          }
+        }
+      },
+      "/collection2": {
+        "get": {
+          "summary": "Get all collection2 items",
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "array",
+                "items": {"$ref": "#/definitions/Collection2"}
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new collection2 item",
+          "consumes": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "collection2",
+              "description": "Collection2 item to create",
+              "schema": {"$ref": "#/definitions/Collection2"}
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {"$ref": "#/definitions/Collection2"}
+            }
+          }
+        },
+        "put": {
+          "summary": "Update a collection2 item",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "collection2",
+              "description": "Collection2 item to update",
+              "schema": {"$ref": "#/definitions/Collection2"}
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Updated",
+              "schema": {"$ref": "#/definitions/Collection2"}
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete a collection2 item",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Deleted"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Collection1": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      },
+      "Collection2": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "content": {"type": "string"}
+        }
+      }
+    }
+  }
